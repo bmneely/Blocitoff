@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <h3>Hi <%= @user.email %></h3>
+    <div class="row">
+        <h3 class="text-center">Here are your To Do's:</h3>
+    </div>
+    <table class="table table-bordered">
+        <thead> 
+            <tr>
+                <th class="col-xs-1">Done?</th>
+                <th class="col-xs-9">Item</th>
+                <th class="col-xs-2">Time Remaining</th>
+            </tr>
+        </thead> 
+            <%= render @user.items %>
+    </table>
+    
+    <br/>
+    <br/>
+    
+    <h4><b><center>New Item</b></center></h4>
+    
+    <div class="row">
+        <div class="col-xs-12">
+            <h5><b>Please Note:</b></h5>
+            <ul>
+                <li>After an item is created, it will automatically be removed in 7 days if you do not mark it as completed before then.</li>
+            </ul>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <%= render partial: 'items/form', locals: { user: @user } %>
+    </div>

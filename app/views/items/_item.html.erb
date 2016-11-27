@@ -1,0 +1,12 @@
+<%= content_tag :tbody, class: 'media', id: "item-#{item.id}" do %>
+    <tr>
+        <td class="col-xs-1"><center><%= link_to "", [item.user, item], method: :delete, class: 'glyphicon glyphicon-check', remote: true %></center></td>
+        <td class="col-xs-9"><%= item.name %></td>
+        <td class="col-xs-2"><%= distance_of_time_in_words(item.created_at, Time.now - 7.days, include_seconds: true) %></td>
+    </tr>
+<% end %>
+
+
+
+
+
